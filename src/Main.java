@@ -1,39 +1,38 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 
 public class Main {
     public static void main(String[] args){
-        Produkt p1 = new Produkt(15.00,8);
-        Produkt p2 = new Produkt(20.00,5);
-        Produkt p3 = new Produkt(130.00,15);
-        Produkt p4 = new Produkt(100.00,18);
-        Produkt p5 = new Produkt(30.00,24);
-        Produkt p6 = new Produkt(180.00,39);
-        List<Produkt> produkte = new ArrayList<Produkt>();
-        produkte.add(p1);
-        produkte.add(p2);
-        produkte.add(p3);
-        produkte.add(p4);
-        produkte.add(p5);
-        produkte.add(p6);
-        Methoden m = new Methoden();
+        Product p1 = new Product(15.00,8);
+        Product p2 = new Product(20.00,5);
+        Product p3 = new Product(130.00,15);
+        Product p4 = new Product(100.00,18);
+        Product p5 = new Product(30.00,24);
+        Product p6 = new Product(180.00,39);
+        List<Product> products = new ArrayList<>();
+        products.add(p1);
+        products.add(p2);
+        products.add(p3);
+        products.add(p4);
+        products.add(p5);
+        products.add(p6);
+        Method m = new Method();
 
-        System.out.printf("UBUNG1\nTotal Preis der Produkte ist %.2f\n", m.TotalPreise(produkte));
+        System.out.printf("Ex1\nTotal price of products is %.2f\n", m.TotalPrices(products));
 
-        System.out.println("UBUNG2\nProdukte mit Preis hoher als 100:");
-        System.out.println(m.HoherAls100(produkte).toString());
+        System.out.println("Ex2\nProducts with price greater than 100:");
+        System.out.println(m.moreThan100(products).toString());
 
-        System.out.println("UBUNG3\nProdukte sortiert nach Rabattpreis:");
-        System.out.println(m.SortiertnachRabatt(produkte).toString());
+        System.out.println("Ex3\nProducts sorted in ascending order by price:");
+        System.out.println(m.sortAfterDiscount(products).toString());
 
-        System.out.println("UBUNG 4\nTeuerste Produkt:");
-        Produkt t = m.TeuersteProdukt(produkte);
-        System.out.printf("(Preis:%.2f, Tage:%d)", t.getBasispreis(), t.getTage());
-        System.out.println("UBUNG 4\nGunstigste Produkt:");
-        Produkt g = m.GunstigsteProdukt(produkte);
-        System.out.printf("(Preis:%.2f, Tage:%d)", g.getBasispreis(), g.getTage());
+        System.out.println("Ex4\nMost expensive product:");
+        Product t = m.mostExpensive(products);
+        System.out.printf("(Price:%.2f, Days:%d)", t.getPrice(), t.getDays());
+        System.out.println("Ex4\nLeast expensive product:");
+        Product g = m.leastExpensive(products);
+        System.out.printf("(Price:%.2f, Days:%d)", g.getPrice(), g.getDays());
 
     }
 }
